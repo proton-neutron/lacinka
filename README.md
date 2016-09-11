@@ -95,7 +95,7 @@ where you can add, remove or modify any rule. Your rule should be structured as 
 ```
 Moreover, you can apply your own rules in any xml file:
 ```
-$converter = new Converter(false)->initRules([path_to_the_xml_file]);
+$converter = (new Converter(false))->initRules([path_to_the_xml_file]);
 ```
 
 > Is it possible to add another version of Belarusian Latin script (for instance, Archaic)?
