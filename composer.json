@@ -2,7 +2,7 @@
   "name": "michaskruzelka/lacinka",
   "description": "Belarusian \"Lacinka\" Converter",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "minimum-stability": "dev",
   "authors": [
     {
