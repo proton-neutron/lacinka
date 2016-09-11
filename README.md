@@ -6,7 +6,7 @@ The tool provides you with API that enables you to convert from Belarusian Latin
 
 ### Composer
 ```
-composer install
+composer require michaskruzelka/lacinka
 ```
 
 ### PHP
