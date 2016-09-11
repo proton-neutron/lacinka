@@ -2,6 +2,7 @@
   "name": "michaskruzelka/lacinka",
   "description": "Belarusian \"Lacinka\" Converter",
   "license": "MIT",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Mikhail Marchanka",
