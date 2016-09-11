@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rules>
+    <rule name="i_palatalization_after_apostrophe">
+        <renderer>
+            <name>ReplaceByPattern5</name>
+            <search>test</search>
+        </renderer>
+    </rule>
+</rules>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rules>
+    <rule name="add_apostrophe">
+        <sort>10</sort>
+        <renderer>
+            <name>ReplaceByPattern</name>
+            <search>/([bcdfghklmnpsrtzvBSDFGHKLMNPSRTZV]{1})(Je|je|Ju|ju|Ja|ja|Jo|jo){1}/</search>
+            <replace>$1'$2</replace>
+        </renderer>
+        <directions>
+            <back>true</back>
+        </directions>
+    </rule>
+    <rule name="remove_apostrophe">
+        <sort>90</sort>
+        <renderer>
+            <name>ReplaceByPattern</name>
+            <search>/([бвгдзмпфжклнрстцчшхБВДЗМПФЖКЛНРСТЦЧШХbcdfghklmnpsrtzvBSDFGHKLMNPSRTZV]+)(['’]{1})(Je|je|Ju|ju|Ja|ja|Jo|jo|е|Е|ё|Ё|і|І|Ю|ю|Я|я){1}/u</search>
+            <replace>$1$3</replace>
+        </renderer>
+        <directions>
+            <forth>true</forth>
+        </directions>
+    </rule>
+</rules>

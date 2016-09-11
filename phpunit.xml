@@ -1,0 +1,11 @@
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         stopOnFailure="false"
+         syntaxCheck="true"
+>
+    <testsuites>
+        <testsuite name="Converter Tests">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

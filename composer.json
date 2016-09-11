@@ -1,0 +1,23 @@
+{
+  "name": "michaskruzelka/lacinka",
+  "description": "Belarusian \"Lacinka\" Converter",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mikhail Marchanka",
+      "email": "michaskruzelka@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Michaskruzelka\\Lacinka\\": "src/",
+      "Michaskruzelka\\Lacinka\\Tests\\": "tests/"
+    }
+  }
+}
