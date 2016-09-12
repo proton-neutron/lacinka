@@ -97,10 +97,7 @@ class Rule extends \SimpleXMLElement
         $replace = [];
         $this->collectPatterns($search, $replace, $direction, $version, $orthography);
         if ( ! empty($search)) {
-            $text = $renderer->setSearch($search)
-                ->setReplace($replace)
-                ->render($text)
-            ;
+            $text = $renderer->render($search, $replace, $text);
         }
         return $this;
     }

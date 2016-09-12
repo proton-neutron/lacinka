@@ -70,8 +70,8 @@ where you can add, remove or modify any rule. Your rule should be structured as 
        <replace>[Replacement, can include <back> or <forth> inheriting nodes]</replace>
    </renderer>
    <directions>
-       <back>[true|false]</back>
-       <forth>[true|false]</forth>
+       <back>[true|false][From latin to cyrillic]</back>
+       <forth>[true|false][From cyrillic to latin]</forth>
    </directions>
    <versions>
        <[version]>[true|false]</[version]>

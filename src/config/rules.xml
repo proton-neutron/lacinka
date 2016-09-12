@@ -662,22 +662,22 @@
             <traditional>true</traditional>
         </versions>
     </rule>
-    <rule name="no_equivalents">
-        <sort>100</sort>
-        <renderer>
-            <name>SimpleReplace</name>
-            <search>[[pair]]</search>
-        </renderer>
-        <pairs>
-            <pair>
-                <cyrillic>ь</cyrillic>
-            </pair>
-            <pair>
-                <cyrillic>Ь</cyrillic>
-            </pair>
-        </pairs>
-        <directions>
-            <forth>true</forth>
-        </directions>
-    </rule>
+    <!--<rule name="no_equivalents">-->
+        <!--<sort>100</sort>-->
+        <!--<renderer>-->
+            <!--<name>SimpleReplace</name>-->
+            <!--<search>[[pair]]</search>-->
+        <!--</renderer>-->
+        <!--<pairs>-->
+            <!--<pair>-->
+                <!--<cyrillic>ь</cyrillic>-->
+            <!--</pair>-->
+            <!--<pair>-->
+                <!--<cyrillic>Ь</cyrillic>-->
+            <!--</pair>-->
+        <!--</pairs>-->
+        <!--<directions>-->
+            <!--<forth>true</forth>-->
+        <!--</directions>-->
+    <!--</rule>-->
 </rules>

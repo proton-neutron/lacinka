@@ -10,22 +10,10 @@ namespace Michaskruzelka\Lacinka\Renderers;
 interface RendererInterface
 {
     /**
+     * @param array $search
+     * @param array $replace
      * @param string $text
      * @return string
      */
-    public function render($text);
-
-    /**
-     * Takes a set of search patterns
-     * @param array $search
-     * @return $this
-     */
-    public function setSearch(array $search);
-
-    /**
-     * Takes a set of replacements
-     * @param array $replace
-     * @return $this
-     */
-    public function setReplace(array $replace);
+    public function render(array $search, array $replace, $text);
 }

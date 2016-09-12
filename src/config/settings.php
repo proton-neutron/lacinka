@@ -1,7 +1,7 @@
 <?php
 
 /**
- * It is required the array to contain 'versions' and 'orthographies' keys
+ * The array is required to contain 'versions' and 'orthographies' keys
  * The first values are taken by default
  */
 return [
