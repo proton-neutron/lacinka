@@ -1,0 +1,22 @@
+@startuml
+hide footbox
+title Init Rules
+
+participant Converter << class >>
+participant Rule << rules[i]: array >>
+participant Renderers.Factory << class >>
+participant Renderers.Interface << interface >>
+
+[-> Converter: initRules
+activate Converter
+loop [ i < rules.size ]
+    Converter -> Rule: validate
+    activate Rule
+    Converter -> Renderers.Factory: getInstance <<static>>
+    activate Renderers.Factory
+    Renderers.Factory -> Renderers.Interface: <<create>>
+    activate Renderers.Interface
+    Renderers.Interface -->> Renderers.Factory
+    Renderers.Factory -->> Converter: Renderers.Interface
+end
+@enduml

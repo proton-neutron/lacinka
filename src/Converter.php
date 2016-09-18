@@ -85,9 +85,9 @@ class Converter
      */
     public function convert($text)
     {
-        array_walk($this->rules, function($rule) use (&$text) {
+        foreach ($this->rules as $rule) {
             $this->applyRule($rule, $text);
-        });
+        }
         return $text;
     }
 

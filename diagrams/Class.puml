@@ -1,0 +1,80 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Converter {
+    TO_LATIN_DIRECTION : String = 'forth'
+    TO_CYRILLIC_DIRECTION : String = 'back'
+    #rules : Array
+    #renderers : Array
+    #config : Array
+    #direction : String
+    #version : String
+    #orthography : String
+    +__construct(init)
+    +initRules(fileName) : Converter
+    +convert(text) : String
+    +getDirection() : String
+    +directToLation() : Converter
+    +directToCyrillic() : Converter
+    +getVersion() : String
+    +setVersion(version) : Converter
+    +getOrthography() : String
+    +setOrthography(orthography) : Converter
+    #initConfig() : Converter
+    #initRule(rule) : Converter
+    #applyRule(rule, &text) : Converter
+    #addRenderer(rendererName) : Converter
+    #setDirection(direction) : Converter
+    #getDefaultRulesConfigFile() : String
+    #sortRules() : Converter
+}
+class Rule {
+    +getRuleName() : String
+    +validate() : Rule
+    +apply(renderer, direction, version, orthography, &text) : Rule
+    +getRenderer() : String|Bool
+    +getSearch() : String
+    +getReplace() : String|Bool
+    #collectPatterns(&search, &replace, direction, version, orthography) : Rule
+    #checkDirection(direction) : Bool
+    #checkVersion(version) : Bool
+    #checkOrthography(orthography) : Bool
+}
+class Parser << (S,#FF7700) Singleton >> {
+    {static} #instance : Parser
+    #l_delim : String
+    #r_delim : String
+    #pairTag : String
+    {static} +getInstance() : Parser
+    +parsePairTag(replace, text) : String
+    #replace(tag, replace, text) : String
+}
+class lib\BetterXML << (T,orchid) Trait >> {
+    +parentNode() : SimpleXMLElement
+    +checkNodeName(name) : lib\BetterXML
+    +asArray() : Array
+}
+class Factory as "Renderers\Factory" {
+    {static} +getInstance(className) : Renderers\Interface
+}
+interface Interface as "Renderers\Interface" {
+    +render(search, replace, text) : String
+}
+class ReplaceByPattern as "Renderers\ReplaceByPattern" {
+    +render(search, replace, text) : String
+}
+class SimpleReplace as "Renderers\SimpleReplace" {
+    +render(search, replace, text) : String
+}
+
+ReplaceByPattern ..|> Interface
+SimpleReplace ..|> Interface
+Converter ..> Factory: use
+Rule ..> Parser: use
+Rule --|> \SimpleXMLElement
+Rule --|> lib\BetterXML
+Factory ..> Interface: create
+Converter "1" *-- "*" Rule
+Converter "1" *-- "*" Interface
+
+@enduml

@@ -9,19 +9,46 @@ namespace Michaskruzelka\Lacinka;
  */
 class Parser
 {
-    const L_DELIM = '[[';
-    const R_DELIM = ']]';
+    /**
+     * @var Parser
+     */
+    protected static $instance;
 
-    const PAIR_TAG = 'pair';
+    protected $l_delim = '[[';
+    protected $r_delim = ']]';
+
+    protected $pairTag = 'pair';
+
+    /**
+     * @return Parser
+     */
+    public static function getInstance()
+    {
+        if ( ! self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
     /**
      * @param string $replace
      * @param string $text
      * @return string
      */
-    public static function parsePairTag($replace, $text)
+    public function parsePairTag($replace, $text)
     {
-        $search = self::L_DELIM . self::PAIR_TAG . self::R_DELIM;
+        return $this->replace($this->pairTag, $replace, $text);
+    }
+
+    /**
+     * @param string $tag
+     * @param string $replace
+     * @param string $text
+     * @return string
+     */
+    protected function replace($tag, $replace, $text)
+    {
+        $search = $this->l_delim . $tag . $this->r_delim;
         return str_replace($search, $replace, $text);
     }
 }

@@ -1,0 +1,19 @@
+@startuml
+hide footbox
+title Convert
+
+participant Converter << class >>
+participant Rule << rules[i]: array >>
+participant Renderers.Interface << interface >>
+
+[-> Converter: convert(text)
+activate Converter
+loop [ i < rules.size ]
+    Converter -> Rule: apply(Renderers.Interface, text)
+    activate Rule
+    Rule -> Renderers.Interface: render(text)
+    activate Renderers.Interface
+    Renderers.Interface -->> Converter: text
+end
+[<<-- Converter: text
+@enduml

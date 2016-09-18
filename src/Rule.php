@@ -158,13 +158,14 @@ class Rule extends \SimpleXMLElement
                 $pair->collectPatterns($search, $replace, $direction, $version, $orthography);
             }
         } else {
+            $parser = Parser::getInstance();
             $search[] = ($direction === Converter::TO_LATIN_DIRECTION)
-                ? Parser::parsePairTag($this->cyrillic, $this->getSearch($direction))
-                : Parser::parsePairTag($this->latin, $this->getSearch($direction))
+                ? $parser->parsePairTag($this->cyrillic, $this->getSearch($direction))
+                : $parser->parsePairTag($this->latin, $this->getSearch($direction))
             ;
             $replace[] = ($direction === Converter::TO_LATIN_DIRECTION)
-                ? Parser::parsePairTag($this->latin,  (string) $this->getReplace($direction))
-                : Parser::parsePairTag($this->cyrillic,  (string) $this->getReplace($direction))
+                ? $parser->parsePairTag($this->latin,  (string) $this->getReplace($direction))
+                : $parser->parsePairTag($this->cyrillic,  (string) $this->getReplace($direction))
             ;
         }
         return $this;
