@@ -2,7 +2,7 @@
 
 namespace Michaskruzelka\Lacinka;
 
-use Michaskruzelka\Lacinka\lib\BetterXML;
+use Michaskruzelka\Lacinka\lib\AdvancedXMLElement;
 use Michaskruzelka\Lacinka\Renderers\RendererInterface;
 
 /**
@@ -49,7 +49,7 @@ use Michaskruzelka\Lacinka\Renderers\RendererInterface;
  */
 class Rule extends \SimpleXMLElement
 {
-    use BetterXML;
+    use AdvancedXMLElement;
 
     /**
      * @return string

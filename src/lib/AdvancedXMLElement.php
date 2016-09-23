@@ -2,7 +2,7 @@
 
 namespace Michaskruzelka\Lacinka\lib;
 
-trait BetterXML
+trait AdvancedXMLElement
 {
     /**
      * @return \SimpleXMLElement

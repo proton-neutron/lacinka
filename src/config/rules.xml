@@ -197,8 +197,14 @@
         <sort>50</sort>
         <renderer>
             <name>ReplaceByPattern</name>
-            <search>/([[pair]]{1})([^aoeuiy]{1})/u</search>
-            <replace>[[pair]]ь$2</replace>
+            <search>
+                <forth>/[[pair]]ь/</forth>
+                <back>/([[pair]]{1})(?![aoeuiy])/u</back>
+            </search>
+            <replace>
+                <forth>[[pair]]</forth>
+                <back>[[pair]]ь$2</back>
+            </replace>
         </renderer>
         <pairs>
             <pair>
@@ -212,6 +218,7 @@
         </pairs>
         <directions>
             <back>true</back>
+            <forth>true</forth>
         </directions>
         <versions>
             <traditional>true</traditional>
@@ -289,9 +296,6 @@
                 <versions>
                     <geographic>true</geographic>
                 </versions>
-                <directions>
-                    <forth>true</forth>
-                </directions>
             </pair>
             <pair>
                 <latin>Ĺ</latin>
@@ -299,9 +303,6 @@
                 <versions>
                     <geographic>true</geographic>
                 </versions>
-                <directions>
-                    <forth>true</forth>
-                </directions>
             </pair>
             <pair>
                 <latin>ś</latin>
@@ -662,22 +663,4 @@
             <traditional>true</traditional>
         </versions>
     </rule>
-    <!--<rule name="no_equivalents">-->
-        <!--<sort>100</sort>-->
-        <!--<renderer>-->
-            <!--<name>SimpleReplace</name>-->
-            <!--<search>[[pair]]</search>-->
-        <!--</renderer>-->
-        <!--<pairs>-->
-            <!--<pair>-->
-                <!--<cyrillic>ь</cyrillic>-->
-            <!--</pair>-->
-            <!--<pair>-->
-                <!--<cyrillic>Ь</cyrillic>-->
-            <!--</pair>-->
-        <!--</pairs>-->
-        <!--<directions>-->
-            <!--<forth>true</forth>-->
-        <!--</directions>-->
-    <!--</rule>-->
 </rules>

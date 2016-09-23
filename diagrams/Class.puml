@@ -49,9 +49,9 @@ class Parser << (S,#FF7700) Singleton >> {
     +parsePairTag(replace, text) : String
     #replace(tag, replace, text) : String
 }
-class lib\BetterXML << (T,orchid) Trait >> {
+class lib\AdvancedXMLElement << (T,orchid) Trait >> {
     +parentNode() : SimpleXMLElement
-    +checkNodeName(name) : lib\BetterXML
+    +checkNodeName(name) : lib\AdvancedXMLElement
     +asArray() : Array
 }
 class Factory as "Renderers\Factory" {
@@ -72,7 +72,7 @@ SimpleReplace ..|> Interface
 Converter ..> Factory: use
 Rule ..> Parser: use
 Rule --|> \SimpleXMLElement
-Rule --|> lib\BetterXML
+Rule --|> lib\AdvancedXMLElement
 Factory ..> Interface: create
 Converter "1" *-- "*" Rule
 Converter "1" *-- "*" Interface
