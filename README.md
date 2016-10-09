@@ -5,12 +5,12 @@ The tool provides you with API that enables you to convert from Belarusian Latin
 ## Basic usage
 
 ### Composer
-```
+```bash
 composer require michaskruzelka/lacinka
 ```
 
 ### PHP
-```
+```php
 use Michaskruzelka\Lacinka\Converter;
 
 $converter = new Converter();
@@ -18,7 +18,7 @@ $converter = new Converter();
 
 Conversion to Belarusian Traditional Latin alphabet:
 
-```
+```php
 $text = "
     Лацінка — іміджавая рэч, яна стварае зусім іншае ўражанне ад мовы, нязвыклае, больш еўрапейскае
     — яна злучае нас з блізкімі нам народамі Цэнтральнай і Ўсходняй Еўропы: палякамі, чэхамі, харватамі,
@@ -31,20 +31,13 @@ $convertedText = $converter->convert($text);
 
 To Belarusian Academic (Geographic) Latin alphabet:
 
-```
-$text = "
-    Лацінка — іміджавая рэч, яна стварае зусім іншае ўражанне ад мовы, нязвыклае, больш еўрапейскае
-    — яна злучае нас з блізкімі нам народамі Цэнтральнай і Ўсходняй Еўропы: палякамі, чэхамі, харватамі,
-    якім лацінка адкрывае беларускую мову як мову блізкую і зразумелую. Можа і камусь з беларусаў
-    яе існаванне можа дадаць цікавасці да беларускай мовы?
-";
-
+```php
 $convertedText = $converter->setVersion('geographic')->convert($text);
 ```
 
 To Belarusian Cyrillic alphabet:
 
-```
+```php
 $text = "
     Łacinka — imidžavaja reč, jana stvaraje zusim inšaje ŭražannie ad movy, niazvykłaje, bolš jeŭrapiejskaje
     — jana złučaje nas z blizkimi nam narodami Centralnaj i Ŭschodniaj Jeŭropy: palakami, čechami, charvatami,
@@ -61,7 +54,7 @@ $convertedText = $converter->directToCyrillic()->convert($text);
 You don't have to modify anything in business logic. Instead, all rules are stored in the /config/rules.xml file
 where you can add, remove or modify any rule. Your rule should be structured as follows:
 
-```
+```xml
 <rule name="[rule_name]">
    <sort>[number]</sort>
    <renderer>
@@ -94,14 +87,14 @@ where you can add, remove or modify any rule. Your rule should be structured as 
 </rule>
 ```
 Moreover, you can apply your own rules in any xml file:
-```
+```php
 $converter = (new Converter(false))->initRules([path_to_the_xml_file]);
 ```
 
 > Is it possible to add another version of Belarusian Latin script (for instance, Archaic)?
 
 Yes. Every version of the alphabet must be specified in /config/settings.php file.
-```
+```php
 ...
 'versions' => [
     'traditional',
@@ -110,7 +103,7 @@ Yes. Every version of the alphabet must be specified in /config/settings.php fil
 ],
 ...
 ```
-```
+```php
 $converter->setVersion([your_version]);
 ```
 
