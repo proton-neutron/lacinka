@@ -5,7 +5,7 @@ namespace Michaskruzelka\Lacinka\Renderers;
 /**
  * Interface RendererInterface
  * @package Michaskruzelka\Lacinka\Renderers
- * @author Mikhail Marchanka <michaskruzelka@gmail.com>
+ * @author Proton Neutron
  */
 interface RendererInterface
 {
