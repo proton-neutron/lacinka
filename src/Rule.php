@@ -45,7 +45,7 @@ use Michaskruzelka\Lacinka\Renderers\RendererInterface;
  *      </rule>
  *
  * @package Michaskruzelka\Lacinka
- * @author Mikhail Marchanka <michaskruzelka@gmail.com>
+ * @author Proton Neutron
  */
 class Rule extends \SimpleXMLElement
 {
