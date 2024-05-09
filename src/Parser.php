@@ -5,7 +5,7 @@ namespace Michaskruzelka\Lacinka;
 /**
  * Class Parser
  * @package Michaskruzelka\Lacinka
- * @author Mikhail Marchanka <michaskruzelka@gmail.com>
+ * @author Proton Neutron
  */
 class Parser
 {
