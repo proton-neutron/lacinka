@@ -13,7 +13,7 @@ use Michaskruzelka\Lacinka\Rule;
  * adjustable xml file
  *
  * @package Michaskruzelka\Lacinka
- * @author Mikhail Marchanka <michaskruzelka@gmail.com>
+ * @author Proton Neutron
  */
 class Converter
 {
